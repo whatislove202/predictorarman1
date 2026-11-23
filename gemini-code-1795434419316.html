@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="bn" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>এআই গেম প্রেডিক্টর বাংলাদেশ - ডিপোজিট</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #06090f;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+        linear-gradient(to bottom, #06090f, #0b101b);
+      color: #f8fafc;
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+    .neon-border {
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.15), inset 0 0 0 1px rgba(16, 185, 129, 0.25);
+    }
+    .console-box {
+      font-family: 'JetBrains Mono', monospace;
+      background: #030508;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.06);
+      color: #34d399;
+      height: 220px;
+      overflow-y: auto;
+    }
+    .loading-screen {
+      font-family: 'JetBrains Mono', monospace;
+      background: #04060a;
+      color: #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      z-index: 50;
+      position: fixed;
+      inset: 0;
+    }
+    .hidden-screen {
+      display: none;
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 0.3; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .pulse-glow {
+      animation: pulse-ring 2.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-emerald-500 selection:text-black">
+
+  <!-- Loading Screen -->
+  <div id="loading" class="loading-screen px-4 text-center">
+    <div class="relative flex items-center justify-center mb-6">
+      <div class="w-16 h-16 rounded-full border-2 border-emerald-500/30 pulse-glow absolute"></div>
+      <div class="w-12 h-12 rounded-full border-t-2 border-r-2 border-emerald-400 animate-spin"></div>
+    </div>
+    <p class="text-sm sm:text-base tracking-wide text-emerald-400">লোড হচ্ছে... অনুগ্রহ করে অপেক্ষা করুন।</p>
+    <span class="text-xs text-slate-500 mt-2">AI NEURAL ENGINE v4.2 • BD SERVER</span>
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent" class="hidden-screen min-h-screen flex flex-col">
+    
+    <!-- Header -->
+    <header class="sticky top-0 z-40 w-full bg-[#06090f]/80 backdrop-blur-md border-b border-white/5">
+      <div class="max-w-5xl mx-auto px-4 py-3.5 flex justify-between items-center">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-black font-bold font-mono-code shadow-lg shadow-emerald-500/20">
+            AI
+          </div>
+          <h1 class="text-lg sm:text-xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+            Melbet <span class="text-emerald-400">এআই প্রেডিক্টর</span> বাংলাদেশ
+          </h1>
+        </div>
+        <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-300">
+          <a href="#how" class="hover:text-emerald-400 transition">এটি কীভাবে কাজ করে</a>
+          <a href="#games" class="hover:text-emerald-400 transition">গেমস</a>
+          <a href="#start" class="px-3.5 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition">শুরু করুন</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero & Terminal Section -->
+    <section id="start" class="flex-1 flex flex-col items-center justify-center px-4 py-12 sm:py-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs sm:text-sm font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>লাইভ সার্ভার সক্রিয় • নির্ভুলতা ৯৭.৪%</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl font-bold text-center max-w-3xl leading-tight mb-4">
+        এআই প্রেডিকশন দিয়ে <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 bg-clip-text text-transparent">আসল টাকা আয় করুন</span>
+      </h2>
+      
+      <p class="max-w-xl text-center text-slate-400 text-base sm:text-lg mb-8 leading-relaxed">
+        বাংলাদেশের হাজার হাজার মানুষ Aviator, Mines এবং অন্যান্য গেমে জেতার জন্য আমাদের এআই ব্যবহার করছেন।
+        রিয়েল-টাইম সিগন্যাল এবং দ্রুত উত্তোলন।
+      </p>
+
+      <!-- Main Action Card -->
+      <div class="w-full max-w-md glass-card neon-border rounded-2xl p-6 sm:p-8">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-mono-code mb-4 pb-3 border-b border-white/5">
+          <span>PLATFORM: MELBET BD</span>
+          <span class="text-emerald-400">● ONLINE</span>
+        </div>
+
+        <label for="userId" class="block text-sm font-medium text-slate-300 mb-2">
+          অ্যাকাউন্ট ভেরিফিকেশন
+        </label>
+        <div class="relative mb-4">
+          <input 
+            id="userId" 
+            type="text" 
+            maxlength="10" 
+            inputmode="numeric" 
+            pattern="\d*" 
+            placeholder="আপনার Melbet অ্যাকাউন্ট আইডি লিখুন" 
+            class="w-full bg-slate-950/80 border border-slate-700/80 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 text-white placeholder-slate-500 px-4 py-3.5 rounded-xl font-mono-code text-base outline-none transition" 
+          />
+        </div>
+
+        <button 
+          id="connectButton" 
+          class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold py-3.5 px-6 rounded-xl text-lg shadow-lg shadow-emerald-500/25 active:scale-[0.99] transition cursor-pointer"
+        >
+          অ্যাকাউন্ট যুক্ত করুন
+        </button>
+
+        <!-- Connection Success State -->
+        <div id="connectionSuccess" class="hidden mt-6 pt-6 border-t border-white/10 text-center">
+          <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4 mb-4">
+            <p class="text-emerald-300 font-semibold text-base">
+              অ্যাকাউন্ট আইডি: <span id="accountIdDisplay" class="font-mono-code text-white bg-slate-900 px-2 py-0.5 rounded">1254567890</span> সফলভাবে যুক্ত হয়েছে!
+            </p>
+            <p class="text-xs font-mono-code text-emerald-400 mt-1.5">
+              স্ট্যাটাস: সক্রিয় | অ্যালগরিদম প্রস্তুত
+            </p>
+          </div>
+          <button 
+            id="getSignalButton" 
+            class="w-full bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-slate-950 font-bold py-3.5 px-6 rounded-xl text-lg shadow-lg shadow-amber-500/20 active:scale-[0.99] transition cursor-pointer"
+          >
+            সিগন্যাল পান ⚡
+          </button>
+        </div>
+
+        <!-- Deposit Error State -->
+        <div id="errorBox" class="hidden mt-6 bg-red-950/60 border border-red-500/40 p-5 rounded-xl text-center shadow-lg shadow-red-950/50">
+          <div class="w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center mx-auto mb-2 text-xl">
+            ⚠️
+          </div>
+          <h3 class="text-lg font-bold text-red-300 mb-1.5">ডিপোজিট পাওয়া যায়নি</h3>
+          <p class="text-sm text-slate-200 mb-4 leading-relaxed">
+            আপনার ব্যালেন্স শূন্য। সিগন্যাল আনলক করতে ন্যূনতম <strong class="text-amber-400 font-mono-code text-base">600 BDT</strong> ডিপোজিট করুন।
+          </p>
+          <a 
+            href="https://refpa3665.com/L?tag=d_6351967m_59359c_&site=6351967&ad=59359&r=registration" 
+            target="_blank" 
+            id="depositButton" 
+            class="block w-full bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-slate-950 font-bold py-3 px-4 rounded-xl text-base shadow-md shadow-amber-500/20 transition"
+          >
+            Melbet-এ এখনই ডিপোজিট করুন →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Winners Section -->
+    <section class="py-12 px-4 border-t border-white/5 bg-slate-950/40">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center justify-center gap-2 mb-8">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <h3 class="text-2xl font-bold text-center text-white">আজকের শীর্ষ বিজয়ী <span class="text-emerald-400 font-mono-code">(BDT)</span></h3>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 gap-3 text-sm">
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 1218473422</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+18,300 BDT</span>
+          </div>
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 9912384741</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+23,500 BDT</span>
+          </div>
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 3099234822</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+14,900 BDT</span>
+          </div>
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 1187339121</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+12,600 BDT</span>
+          </div>
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 4412900113</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+21,200 BDT</span>
+          </div>
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 8283721091</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+24,800 BDT</span>
+          </div>
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 7751937742</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+16,700 BDT</span>
+          </div>
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 5554921811</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+9,600 BDT</span>
+          </div>
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 1983238742</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+22,400 BDT</span>
+          </div>
+          <div class="glass-card px-4 py-3 rounded-xl flex justify-between items-center">
+            <span class="text-slate-300 font-mono-code">👤 ইউজার আইডি: 3377749301</span>
+            <span class="text-emerald-400 font-bold font-mono-code">+19,800 BDT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supported Games Section -->
+    <section id="games" class="py-12 px-4 border-t border-white/5">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold text-center text-white mb-8">উপযোগী গেমস</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="glass-card p-6 rounded-2xl hover:border-emerald-500/30 transition group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">✈️</span>
+              <span class="text-xs font-mono-code px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">RTP 97%</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition">🎮 Aviator</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">বিমানটি উড়ে যাওয়ার আগেই ক্যাশ আউট করার সঠিক সময় নির্ধারণ করুন।</p>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl hover:border-emerald-500/30 transition group">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">💎</span>
+              <span class="text-xs font-mono-code px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">AI GRID</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition">💣 Mines</h4>
+            <p class="text-slate-400 text-sm leading-relaxed">স্মার্ট সিগন্যালের সাহায্যে বোমা এড়িয়ে নিরাপদ পথ বেছে নিন।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how" class="py-12 px-4 border-t border-white/5 bg-slate-950/40">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold text-center text-white mb-8">এটি কীভাবে কাজ করে</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="glass-card p-5 rounded-2xl text-center">
+            <div class="text-2xl mb-2">📡</div>
+            <p class="text-slate-300 text-sm">এআই ২৪/৭ লাইভ গেমের ডেটা বিশ্লেষণ করে।</p>
+          </div>
+          <div class="glass-card p-5 rounded-2xl text-center">
+            <div class="text-2xl mb-2">💡</div>
+            <p class="text-slate-300 text-sm">প্যাটার্ন শনাক্ত করে সঠিক সিগন্যাল তৈরি করে।</p>
+          </div>
+          <div class="glass-card p-5 rounded-2xl text-center">
+            <div class="text-2xl mb-2">📲</div>
+            <p class="text-slate-300 text-sm">আপনি তাৎক্ষণিকভাবে তা পেয়ে যাবেন।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Console Log Section -->
+    <section class="py-12 px-4 border-t border-white/5">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-mono-code font-bold text-emerald-400 tracking-wider">[ কনসোল লগ ]</h3>
+          <div class="flex gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/70"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/70"></span>
+          </div>
+        </div>
+        <div class="console-box rounded-xl p-4 text-xs sm:text-sm space-y-1.5" id="console">
+          <p>[INFO] প্রেডিক্টর সার্ভিস সক্রিয় ✅</p>
+          <p>[INFO] অঞ্চল: বাংলাদেশ 🇧🇩</p>
+          <p>[INFO] মুদ্রা: BDT</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 text-center text-slate-500 text-xs sm:text-sm py-6 px-4">
+      © 2026 AI Predictor Bangladesh. Melbet-এর সাথে সম্পর্কিত নয়। দায়িত্বশীলভাবে ব্যবহার করুন।
+    </footer>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("loading").classList.add("hidden-screen");
+      document.getElementById("mainContent").classList.remove("hidden-screen");
+    }, 3000);
+
+    const consoleBox = document.getElementById("console");
+    function appendLog(msg, colorClass = "") {
+      const p = document.createElement("p");
+      if (colorClass) p.className = colorClass;
+      p.textContent = msg;
+      consoleBox.appendChild(p);
+      consoleBox.scrollTop = consoleBox.scrollHeight;
+    }
+
+    document.getElementById("connectButton").addEventListener("click", () => {
+      const userId = document.getElementById("userId").value.trim();
+      if (userId) {
+        document.getElementById("accountIdDisplay").innerText = userId;
+        document.getElementById("connectionSuccess").classList.remove("hidden");
+        document.getElementById("errorBox").classList.add("hidden");
+        appendLog(`[CONNECT] ID ${userId} সংযুক্ত হয়েছে ✅`);
+      }
+    });
+
+    document.getElementById("getSignalButton").addEventListener("click", () => {
+      document.getElementById("errorBox").classList.remove("hidden");
+      appendLog(`[WARN] ব্যালেন্স 0 BDT — ন্যূনতম 600 BDT ডিপোজিট প্রয়োজন ⚠️`, "text-amber-400");
+    });
+  </script>
+</body>
+</html>
