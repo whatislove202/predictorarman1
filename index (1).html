@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>এআই গেম প্রেডিক্টর বাংলাদেশ - ডিপোজিট</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .console-box {
+      font-family: monospace;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 20px #00ff88;
+      color: #00ff88;
+      height: 250px;
+      overflow-y: auto;
+    }
+    .loading-screen {
+      font-family: monospace;
+      background: #000;
+      color: #00ff88;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      z-index: 50;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .hidden-screen {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div id="loading" class="loading-screen">
+    <p>লোড হচ্ছে... অনুগ্রহ করে অপেক্ষা করুন।</p>
+  </div>
+
+  <div id="mainContent" class="hidden-screen">
+    <header class="w-full bg-gray-800 p-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-green-400">Melbet এআই প্রেডিক্টর বাংলাদেশ</h1>
+      <nav class="space-x-4">
+        <a href="#how" class="hover:text-green-400">এটি কীভাবে কাজ করে</a>
+        <a href="#games" class="hover:text-green-400">গেমস</a>
+        <a href="#start" class="hover:text-green-400">শুরু করুন</a>
+      </nav>
+    </header>
+
+    <section class="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">এআই প্রেডিকশন দিয়ে আসল টাকা আয় করুন</h2>
+      <p class="max-w-xl mb-8 text-gray-300">
+        বাংলাদেশের হাজার হাজার মানুষ Aviator, Mines এবং অন্যান্য গেমে জেতার জন্য আমাদের এআই ব্যবহার করছেন।
+        রিয়েল-টাইম সিগন্যাল এবং দ্রুত উত্তোলন।
+      </p>
+
+      <input id="userId" type="text" maxlength="10" inputmode="numeric" pattern="\d*" placeholder="আপনার Melbet অ্যাকাউন্ট আইডি লিখুন" class="bg-gray-700 text-white p-3 rounded-md mb-4" />
+      <button id="connectButton" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl text-lg transition">
+        অ্যাকাউন্ট যুক্ত করুন
+      </button>
+
+      <div id="connectionSuccess" class="hidden text-green-400 font-bold mt-6">
+        <p>অ্যাকাউন্ট আইডি: <span id="accountIdDisplay">1254567890</span> সফলভাবে যুক্ত হয়েছে!</p>
+        <p>স্ট্যাটাস: সক্রিয় | অ্যালগরিদম প্রস্তুত</p>
+        <button id="getSignalButton" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition mt-4">
+          সিগন্যাল পান
+        </button>
+      </div>
+
+      <div id="errorBox" class="hidden bg-red-600 p-6 rounded-xl max-w-md mx-auto mt-6">
+        <h2 class="text-xl font-bold mb-2">⚠️ ডিপোজিট পাওয়া যায়নি</h2>
+        <p class="mb-4">
+          আপনার ব্যালেন্স শূন্য। সিগন্যাল আনলক করতে ন্যূনতম <strong>600 BDT</strong> ডিপোজিট করুন।
+        </p>
+        <a href="https://refpa3665.com/L?tag=d_6030415m_59359c_&site=6030415&ad=59359&r=registration" target="_blank" id="depositButton" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg transition">
+          Melbet-এ এখনই ডিপোজিট করুন
+        </a>
+      </div>
+    </section>
+
+    <section class="bg-gray-800 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">আজকের শীর্ষ বিজয়ী (BDT)</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300">
+        <p>👤 ইউজার আইডি: 1218473422 – 18,300 BDT</p>
+        <p>👤 ইউজার আইডি: 9912384741 – 23,500 BDT</p>
+        <p>👤 ইউজার আইডি: 3099234822 – 14,900 BDT</p>
+        <p>👤 ইউজার আইডি: 1187339121 – 12,600 BDT</p>
+        <p>👤 ইউজার আইডি: 4412900113 – 21,200 BDT</p>
+        <p>👤 ইউজার আইডি: 8283721091 – 24,800 BDT</p>
+        <p>👤 ইউজার আইডি: 7751937742 – 16,700 BDT</p>
+        <p>👤 ইউজার আইডি: 5554921811 – 9,600 BDT</p>
+        <p>👤 ইউজার আইডি: 1983238742 – 22,400 BDT</p>
+        <p>👤 ইউজার আইডি: 3377749301 – 19,800 BDT</p>
+      </div>
+    </section>
+
+    <section id="games" class="bg-gray-800 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">উপযোগী গেমস</h3>
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">🎮 Aviator</h4>
+          <p class="text-gray-300">বিমানটি উড়ে যাওয়ার আগেই ক্যাশ আউট করার সঠিক সময় নির্ধারণ করুন।</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">💣 Mines</h4>
+          <p class="text-gray-300">স্মার্ট সিগন্যালের সাহায্যে বোমা এড়িয়ে নিরাপদ পথ বেছে নিন।</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="bg-gray-900 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">এটি কীভাবে কাজ করে</h3>
+      <div class="max-w-3xl mx-auto space-y-4 text-gray-300">
+        <p>📡 এআই ২৪/৭ লাইভ গেমের ডেটা বিশ্লেষণ করে।</p>
+        <p>💡 প্যাটার্ন শনাক্ত করে সঠিক সিগন্যাল তৈরি করে।</p>
+        <p>📲 আপনি তাৎক্ষণিকভাবে তা পেয়ে যাবেন।</p>
+      </div>
+    </section>
+
+    <section class="bg-black py-12 px-6 text-center">
+      <h3 class="text-xl font-bold text-green-400 mb-4">[ কনসোল লগ ]</h3>
+      <div class="console-box max-w-3xl mx-auto text-left" id="console">
+        <p>[INFO] প্রেডিক্টর সার্ভিস সক্রিয় ✅</p>
+        <p>[INFO] অঞ্চল: বাংলাদেশ 🇧🇩</p>
+        <p>[INFO] মুদ্রা: BDT</p>
+      </div>
+    </section>
+
+    <footer class="text-center text-gray-500 text-sm py-6">
+      © 2026 AI Predictor Bangladesh. Melbet-এর সাথে সম্পর্কিত নয়। দায়িত্বশীলভাবে ব্যবহার করুন।
+    </footer>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("loading").classList.add("hidden-screen");
+      document.getElementById("mainContent").classList.remove("hidden-screen");
+    }, 3000);
+
+    document.getElementById("connectButton").addEventListener("click", () => {
+      const userId = document.getElementById("userId").value;
+      if (userId) {
+        document.getElementById("accountIdDisplay").innerText = userId;
+        document.getElementById("connectionSuccess").classList.remove("hidden");
+        document.getElementById("errorBox").classList.add("hidden");
+      }
+    });
+
+    document.getElementById("getSignalButton").addEventListener("click", () => {
+      document.getElementById("errorBox").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
